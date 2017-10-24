@@ -1,0 +1,71 @@
+@import './variable.scss';
+
+@mixin module-block($padding: 20px) {
+  box-shadow: 0 0 8px 2px $module-shadow-color;
+  background-color: $module-bkg;
+  padding: $padding;
+  border-radius: 5px;
+}
+
+@mixin pointer {
+  cursor: pointer;
+}
+
+@mixin flexAlignCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin beforeCircle($width: 6px, $color: #d6d6d6) {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -$width / 2;
+  background-color: $color;
+  border-radius: 50%;
+  width: $width;
+  height: $width;
+}
+
+@mixin blockInput($fontSize, $backgroundColor: #fff){
+  width: 100%;
+  padding: 10px 8px;
+  background-color: $backgroundColor;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #dfdfdf;
+  font-size: $fontSize;
+  &:focus {
+    border-color: #666666;
+  }
+}
+
+@mixin circleSpan($width) {
+  width: $width;
+  height: $width;
+  line-height: $width;
+  text-align: center;
+  box-sizing: content-box;
+  border-radius: 50%;
+  white-space: nowrap;
+}
+
+@mixin spanLineHeight($height) {
+  height: $height;
+  line-height: $height;
+}
+
+@mixin spanLineHeightWithSingleBorder($height, $borderWidth: 1px) {
+  height: $height;
+  line-height: $height - $borderWidth;
+}
+
+@mixin spanLineHeightWithBorder($height, $borderWidth: 1px) {
+  height: $height;
+  line-height: $height - 2 * $borderWidth;
+}
+
+@mixin clickColor($color) {
+  -webkit-tap-highlight-color: $color;
+}
